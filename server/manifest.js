@@ -44,7 +44,7 @@ module.exports = new Confidence.Store({
                         SQSUrl: process.env.AWS_SQS_QUEUE,
                         SQSArn: process.env.AWS_SQS_QUEUE_ARN,
                         SQSId: process.env.AWS_SQS_QUEUE_ID
-                    },
+                    }
                 }
             },
             {
