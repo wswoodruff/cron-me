@@ -19,7 +19,7 @@ module.exports = new Confidence.Store({
         debug: {
             $filter: { $env: 'NODE_ENV' },
             $default: {
-                log: ['error', 'cron-queue'],
+                log: ['error', 'cron-service'],
                 request: ['error']
             },
             production: {
@@ -36,14 +36,6 @@ module.exports = new Confidence.Store({
                         $filter: 'NODE_ENV',
                         $default: (process.env.LISTEN_SQS_QUEUE === '1'),
                         test: false
-                    },
-                    aws: {
-                        region: process.env.AWS_REGION,
-                        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-                        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-                        SQSUrl: process.env.AWS_SQS_QUEUE_URL,
-                        SQSArn: process.env.AWS_SQS_QUEUE_ARN,
-                        SQSId: process.env.AWS_SQS_QUEUE_ID
                     }
                 }
             },
