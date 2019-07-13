@@ -17,13 +17,11 @@
   "dependencies": {
     "@hapi/boom": "7.x.x",
     "@hapi/joi": "15.x.x",
-    "aws-sdk": "^2.472.0",
     "bounce": "^1.2.3",
     "haute-couture": "3.x.x",
     "hoek": "^6.1.3",
     "objection": "^1.6.9",
-    "schmervice": "^1.2.0",
-    "sqs-consumer": "^5.3.0"
+    "schmervice": "^1.2.0"
   },
   "devDependencies": {
     "@hapi/code": "5.x.x",
