@@ -34,8 +34,31 @@ module.exports = new Confidence.Store({
                 options: {
                     runCrons: {
                         $filter: 'NODE_ENV',
-                        $default: (process.env.LISTEN_SQS_QUEUE === '1'),
+                        $default: (process.env.RUN_CRONS === '1'),
                         test: false
+                    }
+                }
+            },
+            {
+                plugin: 'schwifty',
+                options: {
+                    $filter: 'NODE_ENV',
+                    $default: {},
+                    $base: {
+                        migrateOnStart: true,
+                        knex: {
+                            client: 'pg',
+                            useNullAsDefault: true,
+                            connection: {
+                                host: process.env.DB_HOST,
+                                user: process.env.DB_USER,
+                                password: process.env.DB_PASSWORD,
+                                database: process.env.DB_NAME
+                            }
+                        }
+                    },
+                    production: {
+                        migrateOnStart: false
                     }
                 }
             },
