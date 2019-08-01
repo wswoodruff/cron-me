@@ -50,6 +50,7 @@ module.exports = new Confidence.Store({
                             client: 'pg',
                             useNullAsDefault: true,
                             connection: {
+                                port: process.env.DB_PORT || 5432,
                                 host: process.env.DB_HOST,
                                 user: process.env.DB_USER,
                                 password: process.env.DB_PASSWORD,
