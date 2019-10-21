@@ -36,7 +36,8 @@ module.exports = new Confidence.Store({
                         $filter: 'NODE_ENV',
                         $default: (process.env.RUN_CRONS === '1'),
                         test: false
-                    }
+                    },
+                    debug: process.env.NODE_ENV === 'development'
                 }
             },
             {
