@@ -41,7 +41,7 @@
     "eslint": "5.x.x",
     "hpal": "2.x.x",
     "hpal-debug": "1.x.x",
-    "knex": "^0.19.0",
+    "knex": "^2.4.0",
     "toys": "2.x.x"
   }
 }
